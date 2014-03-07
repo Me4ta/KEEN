@@ -29,9 +29,8 @@ login_button.click()
 toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 toggle_menu.click()
 
-user_login = wait.until(EC.element_to_be_clickable((By.CLASSNAME, "igoratTest")
-#print user_login
 
-#assert login 
-# driver.close() 
-#driver.quit()
+user_login = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
+assert "igoratTest" in user_login.text
+print "Test complete successfully"
+driver.quit()
