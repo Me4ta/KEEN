@@ -27,7 +27,9 @@ password_field.send_keys("igor12")
 login_button = driver.find_element_by_id("btnLogin")
 login_button.click()
 
-#click confirm
+toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
+toggle_menu.click()
+
 #assert login 
 # driver.close() 
 #driver.quit()
