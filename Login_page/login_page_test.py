@@ -1,0 +1,26 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+
+driver = webdriver.Chrome()
+driver.get("http://keen-mobile-bootstrap.stage.ingenio.com/")
+#print "getting is done"
+
+wait = WebDriverWait(driver, 100)
+toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
+toggle_menu.click()
+# print toggle_menu
+
+elem = driver.find_element_by_class_name("menu-text-pos")
+#elem = driver.find_element(By.CLASS_NAME, "glyphicon glyphicon-login menu-icon-pos")
+elem.click()
+#choose login
+#assert new page for login
+#input corr name and pass
+#click confirm
+#assert login 
+# driver.close() 
+#driver.quit()
