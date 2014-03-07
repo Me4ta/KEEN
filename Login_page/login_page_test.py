@@ -15,10 +15,11 @@ toggle_menu.click()
 # print toggle_menu
 
 elem = driver.find_element_by_class_name("menu-text-pos")
-#elem = driver.find_element(By.CLASS_NAME, "glyphicon glyphicon-login menu-icon-pos")
 elem.click()
-#choose login
-#assert new page for login
+
+name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
+#print name_field
+name_field.send_keys("igorattest")
 #input corr name and pass
 #click confirm
 #assert login 
