@@ -20,10 +20,13 @@ elem.click()
 name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
 #print name_field
 name_field.send_keys("igorattest")
+
 password_field = driver.find_element_by_id("password")
 password_field.send_keys("igor12")
 
-#input corr name and pass
+login_button = driver.find_element_by_id("btnLogin")
+login_button.click()
+
 #click confirm
 #assert login 
 # driver.close() 
