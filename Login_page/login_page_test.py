@@ -18,7 +18,6 @@ elem = driver.find_element_by_class_name("menu-text-pos")
 elem.click()
 
 name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
-#print name_field
 name_field.send_keys("igorattest")
 
 password_field = driver.find_element_by_id("password")
@@ -29,6 +28,9 @@ login_button.click()
 
 toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 toggle_menu.click()
+
+user_login = wait.until(EC.element_to_be_clickable((By.CLASSNAME, "igoratTest")
+#print user_login
 
 #assert login 
 # driver.close() 
