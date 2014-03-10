@@ -26,8 +26,8 @@ password_field.send_keys("igor12")
 login_button = driver.find_element_by_id("btnLogin")
 login_button.click()
 
-toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
-toggle_menu.click()
+common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu.click()
 
 
 user_login = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
