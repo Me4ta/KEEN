@@ -32,6 +32,5 @@ common_menu.click()
 login_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
 assert "Log In" in login_menu.text
 
-#logout
-#assert logout
-#close brouser
+print "Test complete successfully"
+driver.quit()
