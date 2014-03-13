@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-#open brouser and testing page
+#open browser and testing page
 driver = webdriver.Chrome()
 driver.get("http://keen-mobile-bootstrap.stage.ingenio.com/#/login")
 
