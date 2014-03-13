@@ -10,7 +10,7 @@ driver.get("http://mb.test.ingenio.com/index.html#/register")
 # input e-mail, password, confirm password
 wait = WebDriverWait(driver, 10)
 email_field = wait.until(EC.element_to_be_clickable((By.ID, "regEmail")))
-test_user_email = "test07@example.com"
+test_user_email = "test09@example.com"
 email_field.send_keys(test_user_email)
 
 password_field = driver.find_element_by_id("regPassword")
@@ -28,6 +28,8 @@ common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-b
 common_menu.click()
 
 logout_button = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+user = driver.find_element_by_class_name("menu-text-pos")
+user_name = user.text
 logout_button.click()
 
 # login with created email and password
@@ -44,9 +46,19 @@ name_field.send_keys(test_user_email)
 password_field = driver.find_element_by_id("password")
 password_field.send_keys(test_user_password)
 
-#login_button = driver.find_element_by_id("btnLogin")
-#login_button.click()
+login_button = driver.find_element_by_id("btnLogin")
+login_button.click()
 
 # assert login
+common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu.click()
+
+logined_user = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
+assert user_name in logined_user.text
+print logined_user.text
+
 # logout
-#deiver.quit()
+logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_user.click()
+
+#driver.quit()
