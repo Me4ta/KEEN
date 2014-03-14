@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+# !!! change test_user_email (+1) before start the test
+
 # open browser and registration page
 driver = webdriver.Chrome()
 driver.get("http://mb.test.ingenio.com/index.html#/register")
@@ -10,7 +12,7 @@ driver.get("http://mb.test.ingenio.com/index.html#/register")
 # input e-mail, password, confirm password
 wait = WebDriverWait(driver, 10)
 email_field = wait.until(EC.element_to_be_clickable((By.ID, "regEmail")))
-test_user_email = "test09@example.com"
+test_user_email = "test10@example.com"
 email_field.send_keys(test_user_email)
 
 password_field = driver.find_element_by_id("regPassword")
@@ -61,4 +63,4 @@ print logined_user.text
 logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
 logout_user.click()
 
-#driver.quit()
+driver.quit()
