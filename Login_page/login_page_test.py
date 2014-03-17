@@ -7,9 +7,10 @@ from selenium.webdriver.common.keys import Keys
 #testing data
 test_user_email = "test01@example.com"
 test_user_password = "123456"
+test_user_name = "Member4760"
 
 driver = webdriver.Chrome()
-driver.get("http://keen-mobile-bootstrap.stage.ingenio.com/")
+driver.get("http://mb.test.ingenio.com/index.html")
 #print "getting is done"
 
 wait = WebDriverWait(driver, 100)
@@ -34,6 +35,6 @@ common_menu.click()
 
 
 user_login = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
-assert "igoratTest" in user_login.text
+assert test_user_name in user_login.text
 print "Test complete successfully"
 driver.quit()
