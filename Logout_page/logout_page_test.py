@@ -3,6 +3,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+test_user_email = "test01@example.com"
+test_user_password = "123456"
+
 #open browser and testing page
 driver = webdriver.Chrome()
 driver.get("http://keen-mobile-bootstrap.stage.ingenio.com/#/login")
@@ -10,10 +13,10 @@ driver.get("http://keen-mobile-bootstrap.stage.ingenio.com/#/login")
 #login user
 wait = WebDriverWait(driver, 10)
 name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
-name_field.send_keys("igorattest")
+name_field.send_keys(test_user_email)
 
 password_field = driver.find_element_by_id("password")
-password_field.send_keys("igor12")
+password_field.send_keys(test_user_password)
 
 login_button = driver.find_element_by_id("btnLogin")
 login_button.click()
