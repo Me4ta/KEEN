@@ -5,6 +5,10 @@ from selenium.webdriver.common.by import By
 
 # !!! change test_user_email (+1) before start the test
 
+test_user_email = "test10@example.com"
+test_user_password = "123456"
+
+
 # open browser and registration page
 driver = webdriver.Chrome()
 driver.get("http://mb.test.ingenio.com/index.html#/register")
@@ -12,11 +16,9 @@ driver.get("http://mb.test.ingenio.com/index.html#/register")
 # input e-mail, password, confirm password
 wait = WebDriverWait(driver, 10)
 email_field = wait.until(EC.element_to_be_clickable((By.ID, "regEmail")))
-test_user_email = "test10@example.com"
 email_field.send_keys(test_user_email)
 
 password_field = driver.find_element_by_id("regPassword")
-test_user_password = "123456"
 password_field.send_keys(test_user_password)
 
 confirm_password_field = driver.find_element_by_id("regPassword2")
@@ -62,5 +64,7 @@ print logined_user.text
 # logout
 logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
 logout_user.click()
+
+print "Test complete successfully"
 
 driver.quit()
