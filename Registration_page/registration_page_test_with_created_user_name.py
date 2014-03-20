@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 ## !!! change test_user_email (+1) before start the test
 
-test_user_email = "test27@example.com"
+test_user_email = "test30@example.com"
 test_user_password = "123456"
 
 ## open browser and registration page
@@ -28,7 +28,7 @@ register_button = driver.find_element_by_id("btnRegister")
 register_button.click()
 
 ## make a logout
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 common_menu.click()
 
 logout_button = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
@@ -37,7 +37,7 @@ user_name = user.text
 logout_button.click()
 
 ## login with created user name and password
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 common_menu.click()
 
 login_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
@@ -53,18 +53,19 @@ login_button = driver.find_element_by_id("btnLogin")
 login_button.click()
 
 ## assert login
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 common_menu.click()
 
-user_menu = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME,"menu-text-pos"), "Member"))
-logged_in_user = driver.find_element_by_class_name("menu-text-pos")
+try:
+    user_menu = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME,"menu-text-pos"), "Member"))
+    logged_in_user = driver.find_element_by_class_name("menu-text-pos")
 
-assert user_name in logged_in_user.text
+    assert user_name in logged_in_user.text
 
-## logout
-logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
-logout_user.click()
+    ## logout
+    logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
+    logout_user.click()
 
-print "Test complete successfully"
-
-driver.quit()
+    print "Test complete successfully"
+finally:
+    driver.quit()
