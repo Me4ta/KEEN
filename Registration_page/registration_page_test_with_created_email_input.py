@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 # !!! change test_user_email (+1) before start the test
 
-test_user_email = "test10@example.com"
+test_user_email = "test20@example.com"
 test_user_password = "123456"
 
 
@@ -31,7 +31,7 @@ register_button.click()
 common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
 common_menu.click()
 
-logout_button = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_button = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 user = driver.find_element_by_class_name("menu-text-pos")
 user_name = user.text
 logout_button.click()
@@ -62,7 +62,7 @@ assert user_name in logined_user.text
 print logined_user.text
 
 # logout
-logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 logout_user.click()
 
 print "Test complete successfully"
