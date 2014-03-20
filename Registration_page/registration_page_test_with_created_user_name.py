@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 ## !!! change test_user_email (+1) before start the test
 
-test_user_email = "test17@example.com"
+test_user_email = "test27@example.com"
 test_user_password = "123456"
 
 ## open browser and registration page
@@ -31,7 +31,7 @@ register_button.click()
 common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
 common_menu.click()
 
-logout_button = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_button = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 user = driver.find_element_by_class_name("menu-text-pos")
 user_name = user.text
 logout_button.click()
@@ -43,7 +43,9 @@ common_menu.click()
 login_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
 login_button.click()
 
-#name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
+name_field = wait.until(EC.element_to_be_clickable((By.ID, "userName")))
+name_field.send_keys(user_name)
+
 password_field = wait.until(EC.element_to_be_clickable((By.ID, "password")))
 password_field.send_keys(test_user_password)
 
@@ -60,7 +62,7 @@ logged_in_user = driver.find_element_by_class_name("menu-text-pos")
 assert user_name in logged_in_user.text
 
 ## logout
-logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 logout_user.click()
 
 print "Test complete successfully"
