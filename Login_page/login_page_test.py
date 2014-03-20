@@ -33,8 +33,9 @@ login_button.click()
 common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
 common_menu.click()
 
-
-user_login = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
-assert test_user_name in user_login.text
-print "Test complete successfully"
-driver.quit()
+try:
+    user_login = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
+    assert test_user_name in user_login.text
+    print "Test complete successfully"
+finally:
+    driver.quit()
