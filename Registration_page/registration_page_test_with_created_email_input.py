@@ -28,7 +28,7 @@ register_button = driver.find_element_by_id("btnRegister")
 register_button.click()
 
 # make a logout
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 common_menu.click()
 
 logout_button = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
@@ -37,7 +37,7 @@ user_name = user.text
 logout_button.click()
 
 # login with created email and password
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 common_menu.click()
 
 login_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
