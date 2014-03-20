@@ -32,10 +32,11 @@ logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 logout_user.click()
 
 #assert logout
-common_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "show-menu-button")))
-common_menu.click()
-login_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
-assert "Log In" in login_menu.text
-
-print "Test complete successfully"
-driver.quit()
+try:
+    common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
+    common_menu.click()
+    login_menu = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "menu-text-pos")))
+    assert "Log In" in login_menu.text
+    print "Test complete successfully"
+finally:
+    driver.quit()
