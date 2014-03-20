@@ -28,7 +28,7 @@ toggle_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
 toggle_menu.click()
 
 #logout user
-logout_user = wait.until(EC.element_to_be_clickable((By.ID, "logout")))
+logout_user = wait.until(EC.element_to_be_clickable((By.ID, "mn-logout")))
 logout_user.click()
 
 #assert logout
