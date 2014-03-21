@@ -35,6 +35,8 @@ user_name = wait.until(EC.element_to_be_clickable((By.ID, "mn-member-name")))
 user_name.click()
 
 first_name_field = wait.until(EC.element_to_be_clickable((By.ID, "first-name")))
+assert " " in first_name_field.text
+
 first_name_field.send_keys("AAA")
 
 last_name_field = driver.find_element_by_id("last-name")
