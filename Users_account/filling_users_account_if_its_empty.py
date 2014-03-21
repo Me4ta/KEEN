@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
-test_user_email = "test03@example.com" #Change it before test +1!!!
+test_user_email = "test06@example.com" #Change it before test +1!!!
 test_user_password = "123456"
 
 ## open browser and login page
@@ -35,21 +35,25 @@ user_name = wait.until(EC.element_to_be_clickable((By.ID, "mn-member-name")))
 user_name.click()
 
 first_name_field = wait.until(EC.element_to_be_clickable((By.ID, "first-name")))
-assert " " in first_name_field.text
-
-first_name_field.send_keys("AAA")
-
-last_name_field = driver.find_element_by_id("last-name")
-last_name_field.send_keys("BBB")
-
-save_button = driver.find_element_by_id("btn-save")
-save_button.click()
 
 try:
-    success_message = wait.until(EC.element_to_be_clickable((By.ID, "msg-result")))
-    assert "successfully" in success_message.text
+    assert "" in first_name_field.text
+
+    first_name_field.send_keys("AAA")
+
+    last_name_field = driver.find_element_by_id("last-name")
+    last_name_field.send_keys("BBB")
+
+    save_button = driver.find_element_by_id("btn-save")
+    save_button.click()
+
+    try:
+        success_message = wait.until(EC.element_to_be_clickable((By.ID, "msg-result")))
+        assert "successfully" in success_message.text
+
+    finally:
+        driver.quit()
+
 
 finally:
     driver.quit()
-
-
