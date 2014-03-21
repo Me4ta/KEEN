@@ -9,10 +9,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
-test_user_email = "test03@example.com" #Change it before test +1!!!
+test_user_email = "test03@example.com"
 test_user_password = "123456"
-new_first_name = "CCC"
-new_last_name = "DDD"
+new_first_name = "CCC" #Change it before test
+new_last_name = "DDD" #Change it before test
 
 ## open browser and login page
 driver = webdriver.Chrome()
