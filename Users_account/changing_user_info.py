@@ -11,6 +11,8 @@ import time
 
 test_user_email = "test03@example.com" #Change it before test +1!!!
 test_user_password = "123456"
+new_first_name = "CCC"
+new_last_name = "DDD"
 
 ## open browser and login page
 driver = webdriver.Chrome()
@@ -35,12 +37,12 @@ user_name = wait.until(EC.element_to_be_clickable((By.ID, "mn-member-name")))
 user_name.click()
 
 first_name_field = wait.until(EC.element_to_be_clickable((By.ID, "first-name")))
-##clear field
-first_name_field.send_keys("CCC")
+first_name_field.clear()
+first_name_field.send_keys(new_first_name)
 
 last_name_field = driver.find_element_by_id("last-name")
-#clear field
-last_name_field.send_keys("DDD")
+last_name_field.clear()
+last_name_field.send_keys(new_last_name)
 
 save_button = driver.find_element_by_id("btn-save")
 save_button.click()
