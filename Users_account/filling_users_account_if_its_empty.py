@@ -34,7 +34,11 @@ common_menu.click()
 user_name = wait.until(EC.element_to_be_clickable((By.ID, "mn-member-name")))
 user_name.click()
 
+first_name_field = wait.until(EC.element_to_be_clickable((By.ID, "first-name")))
+first_name_field.send_keys("AAA")
 
+last_name_field = driver.find_element_by_id("last-name")
+last_name_field.send_keys("BBB")
 
 #driver.quit()
 
