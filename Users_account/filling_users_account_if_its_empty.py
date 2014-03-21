@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import time
 
 test_user_email = "test02@example.com" #Change it before test +1!!!
 test_user_password = "123456"
@@ -25,8 +26,16 @@ password_field.send_keys(test_user_password)
 login_button = driver.find_element_by_id("btnLogin")
 login_button.click()
 
+#time.sleep(5)
+
+common_menu = wait.until(EC.element_to_be_clickable((By.ID, "toggle-menu")))
+common_menu.click()
+
+user_name = wait.until(EC.element_to_be_clickable((By.ID, "mn-member-name")))
+user_name.click()
 
 
-driver.quit()
+
+#driver.quit()
 
 
