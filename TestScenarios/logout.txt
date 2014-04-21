@@ -1,0 +1,9 @@
+Feature: Logout (positive)
+In order to ended the session
+As a user
+I want to logout user account
+
+Scenario: Logout user account:
+	Given I logged in account
+	When I click the "Logout" button in the left menu
+	Then I should see the main page without user name in the left menu

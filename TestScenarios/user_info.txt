@@ -1,0 +1,29 @@
+Feature: User Info (positive)
+In order to work with user info
+As a user
+I want to change the user info fields in the left menu
+
+Scenario: Filling the first name:
+	Given I filled in account first name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Filling the last name:
+	Given I filled in account last name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the Member name:
+	Given I filled in account Member name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the user info:
+	Given I changed in account fields with first and last name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the email:
+	Given I filled in account email
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."

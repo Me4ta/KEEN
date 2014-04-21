@@ -1,0 +1,40 @@
+Feature: Register (positive)
+In order to create a new user
+As a user
+I want to registrate my account
+
+Scenario: Register to user account with correct fields:
+	Given I filled in email, password and confirm password
+	When I click the "Register" button
+	Then I should see the main page and user name in the left menu
+
+
+Feature: Register (negative)
+In order to get the error message
+As a user
+I want to try to registrate my account with incorrect data
+
+Scenario: Register user account with empty fields:
+	Given I didn't fill in email and password
+	When I click the "Register" button
+	Then I should see the message "Sorry, please enter a valid email and try again."
+
+Scenario: Register user account with incorrect email:
+	Given I filled in incorrect email and password
+	When I click the "Register" button
+	Then I should see the message "Sorry, please enter a valid email and try again."
+
+Scenario: Register user account with incorrect password:
+	Given I filled in correct email and incorrect password
+	When I click the "Register" button
+	Then I should see the message "Password length should be between 6 and 16"
+
+Scenario: Register user account with incorrect confirming password:
+	Given I filled in correct email and correct password and not the same password in the second field
+	When I click the "Register" button
+	Then I should see the message "Sorry, the passwords you entered do not match."
+
+Scenario: Register to user account with already used email:
+	Given I filled in already used email, password and confirm password
+	When I click the "Register" button
+	Then I should see the message "Sorry, that email is already in use. Please retry with another email."
