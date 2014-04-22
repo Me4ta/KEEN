@@ -5,10 +5,10 @@ Feature: Login
 
 #positive scenarious
 	Scenario: Login with correct credentials
-		Given I filled in account fields with correct name and password
+		Given I filled-in login form fields with correct user name and password
 		When I click the "Login" button
 		Then I should see the main page 
-			And user name in the menu
+			And my user name in the menu
 
 #negative scenarious
 	Scenario: Login with incorrect user name
