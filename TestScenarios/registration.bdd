@@ -10,6 +10,14 @@ Scenario: Register to user account with correct fields:
 
 
 Feature: Register (negative)
+
+#haha =) Feature is something that should have business meaning and meaning to a user if you would try to rephrase this one with correct format:
+# As a user
+# In order to get the error message
+# I want to try to register my account with incorrect data
+
+# now it should be easier to understand that user actualy don't want to get any error messages, usually, so given feature description start making less sence. Your above feature is correct one, such cases as error messages or other corner cases should be describen in scenarious istead, but grouped under the same "Register feature" (see. login.bdd for examples)
+
 In order to get the error message
 As a user
 I want to try to register my account with incorrect data
