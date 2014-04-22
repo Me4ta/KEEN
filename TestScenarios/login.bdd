@@ -4,24 +4,24 @@ Feature: Login
 	So I can access private part of the app
 
 #positive scenarious
-	Scenario: Login user account
+	Scenario: Login with correct credentials
 		Given I filled in account fields with correct name and password
 		When I click the "Login" button
 		Then I should see the main page 
 			And user name in the menu
 
 #negative scenarious
-	Scenario: Login user account with incorrect user name
+	Scenario: Login with incorrect user name
 		Given I filled in account fields with incorrect name and password
 		When I click the "Login" button
 		Then I should see the message "You have entered an invalid username or password."
 
-	Scenario: Login to user account with incorrect password
+	Scenario: Login with incorrect password
 		Given I filled in account fields with correct name and incorrect password
 		When I click the "Login" button
 		Then I should see the message "You have entered an invalid username or password."
 
-	Scenario: Login user account with user name from the first user and password from the another user
+	Scenario: Login with user name from one user and password from the another
 		Given I filled in account fields with correct first user name and corect another user password
 		When I click the "Login" button
 		Then I should see the message "You have entered an invalid username or password."
