@@ -1,0 +1,27 @@
+Feature: Login
+	As a user
+	I want to login with existing credentials
+	So I can access private part of the app
+
+#positive scenarious
+	Scenario: Login with correct credentials
+		Given I filled-in login form fields with correct user name and password
+		When I click the "Login" button
+		Then I should see the main page 
+			And my user name in the menu
+
+#negative scenarious
+	Scenario: Login with incorrect user name
+		Given I filled in account fields with incorrect name and password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
+
+	Scenario: Login with incorrect password
+		Given I filled in account fields with correct name and incorrect password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
+
+	Scenario: Login with user name from one user and password from the another
+		Given I filled in account fields with correct first user name and corect another user password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
