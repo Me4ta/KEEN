@@ -1,4 +1,12 @@
 Feature: User Info (positive)
+# "in order to work" is to generic, try something like
+
+# As a user
+# I want to be able to update my user name, password and real name
+# So I can change default user name to one I like
+#	And other information on any demand
+
+
 In order to work with user info
 As a user
 I want to change the user info fields in the left menu

@@ -8,7 +8,6 @@ Scenario: Register to user account with correct fields:
 	When I click the "Register" button
 	Then I should see the main page and user name in the left menu
 
-
 Feature: Register (negative)
 
 #haha =) Feature is something that should have business meaning and meaning to a user if you would try to rephrase this one with correct format:
