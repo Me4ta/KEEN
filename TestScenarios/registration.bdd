@@ -1,7 +1,7 @@
 Feature: Register (positive)
 In order to create a new user
 As a user
-I want to registrate my account
+I want to register my account
 
 Scenario: Register to user account with correct fields:
 	Given I filled in email, password and confirm password
@@ -12,7 +12,7 @@ Scenario: Register to user account with correct fields:
 Feature: Register (negative)
 In order to get the error message
 As a user
-I want to try to registrate my account with incorrect data
+I want to try to register my account with incorrect data
 
 Scenario: Register user account with empty fields:
 	Given I didn't fill in email and password
