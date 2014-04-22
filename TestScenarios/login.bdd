@@ -3,28 +3,28 @@ Feature: Login (positive)
 	I want to login with existing credentials
 	So I can access private part of the app
 
-Scenario: Login user account:
-	Given I filled in account fields with correct name and password
-	When I click the "Login" button
-	Then I should see the main page and user name in the menu
+	Scenario: Login user account:
+		Given I filled in account fields with correct name and password
+		When I click the "Login" button
+		Then I should see the main page and user name in the menu
 
 
 Feature: Login (negative)
-In order to enter in account
-As a user
-I want to login with created user
+	In order to enter in account
+	As a user
+	I want to login with created user
 
-Scenario: Login user account with incorrect user name:
-	Given I filled in account fields with incorrect name and password
-	When I click the "Login" button
-	Then I should see the message "You have entered an invalid username or password."
+	Scenario: Login user account with incorrect user name:
+		Given I filled in account fields with incorrect name and password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
 
-Scenario: Login to user account with incorrect password:
-	Given I filled in account fields with correct name and incorrect password
-	When I click the "Login" button
-	Then I should see the message "You have entered an invalid username or password."
+	Scenario: Login to user account with incorrect password:
+		Given I filled in account fields with correct name and incorrect password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
 
-Scenario: Login user account with user name from the first user and password from the another user:
-	Given I filled in account fields with correct first user name and corect another user password
-	When I click the "Login" button
-	Then I should see the message "You have entered an invalid username or password."
+	Scenario: Login user account with user name from the first user and password from the another user:
+		Given I filled in account fields with correct first user name and corect another user password
+		When I click the "Login" button
+		Then I should see the message "You have entered an invalid username or password."
