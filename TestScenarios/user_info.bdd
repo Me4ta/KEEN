@@ -6,63 +6,63 @@ Feature: User Info (positive)
 # So I can change default user name to one I like
 #	And other information on any demand
 
-
-In order to work with user info
 As a user
-I want to change the user info fields in the left menu
+I want to be able to update the user info fields in the private part of the app
+So I can work with user info
 
-Scenario: Filling the first name:
-	Given I filled in account first name
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Filling the first name
+		Given I filled in account first name
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Filling the last name:
-	Given I filled in account last name
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Filling the last name
+		Given I filled in account last name
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Changing the Member name:
-	Given I filled in account Member name
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Changing the Member name
+		Given I filled in account Member name
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Changing the first name:
-	Given I changed in account field with first name
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Changing the first name
+		Given I changed in account field with first name
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Changing the last name:
-	Given I changed in account field with last name
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Changing the last name
+		Given I changed in account field with last name
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Changing the email:
-	Given I filled in account email
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Changing the email
+		Given I filled in account email
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
-Scenario: Changing the password:
-	Given I changed in account fields with password and confirm password
-	When I click the "Save" button
-	Then I should see message "Your member information has been successfully saved."
+	Scenario: Changing the password
+		Given I changed in account fields with password and confirm password
+		When I click the "Save" button
+		Then I should see message "Your member information has been successfully saved."
 
 Feature: User Info (negative)
-In order to check error message
+
 As a user
-I want to change user info with incorrect data
+I don't want to be able to change user info with incorrect data
+So I should see the error message 
 
-Scenario: Changing the Member name:
-	Given I changed in account Member name to used member name
-	When I click the "Save" button
-	Then I should see message "Sorry, that membername is already in use. Please retry with another membername."
+	Scenario: Changing the Member name
+		Given I changed in account Member name to used member name
+		When I click the "Save" button
+		Then I should see message "Sorry, that membername is already in use. Please retry with another membername."
 
-Scenario: Changing the email:
-	Given I wrote an incorrect email
-	When I click the "Save" button
-	Then I should see message "Sorry, that email format is not recognized. Please re-enter your email address."
+	Scenario: Changing the email
+		Given I wrote an incorrect email
+		When I click the "Save" button
+		Then I should see message "Sorry, that email format is not recognized. Please re-enter your email address."
 
-Scenario: Changing the email:
-	Given I wrote an used email by another user
-	When I click the "Save" button
-	Then I should see message "Sorry, that email is already in use. Please retry with another email."
+	Scenario: Changing the email
+		Given I wrote an used email by another user
+		When I click the "Save" button
+		Then I should see message "Sorry, that email is already in use. Please retry with another email."
 
