@@ -1,0 +1,118 @@
+test scenarios
+
+http://m.keen.test.ingenio.com/index.html#
+
+Feature: Register (positive)
+In order to create a new user
+As a user
+I want to registrate my account
+
+Scenario: Register to user account with correct fields:
+	Given I filled in email, password and confirm password
+	When I click the "Register" button
+	Then I should see the main page and user name in the left menu
+
+
+Feature: Register (negative)
+In order to get the error message
+As a user
+I want to try to registrate my account with incorrect data
+
+Scenario: Register user account with empty fields:
+	Given I didn't fill in email and password
+	When I click the "Register" button
+	Then I should see the message "Sorry, please enter a valid email and try again."
+
+Scenario: Register user account with incorrect email:
+	Given I filled in incorrect email and password
+	When I click the "Register" button
+	Then I should see the message "Sorry, please enter a valid email and try again."
+
+Scenario: Register user account with incorrect password:
+	Given I filled in correct email and incorrect password
+	When I click the "Register" button
+	Then I should see the message "Password length should be between 6 and 16"
+
+Scenario: Register user account with incorrect confirming password:
+	Given I filled in correct email and correct password and not the same password in the second field
+	When I click the "Register" button
+	Then I should see the message "Sorry, the passwords you entered do not match."
+
+Scenario: Register to user account with already used email:
+	Given I filled in already used email, password and confirm password
+	When I click the "Register" button
+	Then I should see the message "Sorry, that email is already in use. Please retry with another email."
+
+
+Feature: Logout (positive)
+In order to ended the session
+As a user
+I want to logout user account
+
+Scenario: Logout user account:
+	Given I logged in account
+	When I click the "Logout" button in the left menu
+	Then I should see the main page without user name in the left menu
+
+
+Feature: Login (positive)
+In order to enter in account
+As a user
+I want to login with created user
+
+Scenario: Login user account:
+	Given I filled in account fields with correct name and password
+	When I click the "Login" button
+	Then I should see the main page and user name in the menu
+
+
+Feature: Login (negative)
+In order to enter in account
+As a user
+I want to login with created user
+
+Scenario: Login user account with incorrect user name:
+	Given I filled in account fields with incorrect name and password
+	When I click the "Login" button
+	Then I should see the message "You have entered an invalid username or password."
+
+Scenario: Login to user account with incorrect password:
+	Given I filled in account fields with correct name and incorrect password
+	When I click the "Login" button
+	Then I should see the message "You have entered an invalid username or password."
+
+Scenario: Login user account with user name from the first user and password from the another user:
+	Given I filled in account fields with correct first user name and corect another user password
+	When I click the "Login" button
+	Then I should see the message "You have entered an invalid username or password."
+
+
+Feature: User Info (positive)
+In order to work with user info
+As a user
+I want to change the user info fields in the left menu
+
+Scenario: Filling the first name:
+	Given I filled in account first name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Filling the last name:
+	Given I filled in account last name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the Member name:
+	Given I filled in account Member name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the user info:
+	Given I changed in account fields with first and last name
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
+
+Scenario: Changing the email:
+	Given I filled in account email
+	When I click the "Save" button
+	Then I should see message "Your member information has been successfully saved."
